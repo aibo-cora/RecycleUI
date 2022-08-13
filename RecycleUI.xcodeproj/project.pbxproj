@@ -11,6 +11,12 @@
 		DEFD539128A7F7C7007DD90E /* RecycleUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEFD538628A7F7C6007DD90E /* RecycleUI.framework */; };
 		DEFD539628A7F7C7007DD90E /* RecycleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFD539528A7F7C7007DD90E /* RecycleUITests.swift */; };
 		DEFD539728A7F7C7007DD90E /* RecycleUI.h in Headers */ = {isa = PBXBuildFile; fileRef = DEFD538928A7F7C6007DD90E /* RecycleUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DEFD53A428A7FA1C007DD90E /* DominoStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFD53A328A7FA1C007DD90E /* DominoStack.swift */; };
+		DEFD53AA28A7FB29007DD90E /* DominoExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFD53A928A7FB29007DD90E /* DominoExample.swift */; };
+		DEFD53AC28A7FB97007DD90E /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFD53AB28A7FB97007DD90E /* UserStore.swift */; };
+		DEFD53AD28A7FB97007DD90E /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFD53AB28A7FB97007DD90E /* UserStore.swift */; };
+		DEFD53AF28A7FBE7007DD90E /* DiscoverUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFD53AE28A7FBE7007DD90E /* DiscoverUser.swift */; };
+		DEFD53B028A7FBE7007DD90E /* DiscoverUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFD53AE28A7FBE7007DD90E /* DiscoverUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +35,10 @@
 		DEFD538A28A7F7C6007DD90E /* RecycleUI.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = RecycleUI.docc; sourceTree = "<group>"; };
 		DEFD539028A7F7C7007DD90E /* RecycleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecycleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEFD539528A7F7C7007DD90E /* RecycleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecycleUITests.swift; sourceTree = "<group>"; };
+		DEFD53A328A7FA1C007DD90E /* DominoStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DominoStack.swift; sourceTree = "<group>"; };
+		DEFD53A928A7FB29007DD90E /* DominoExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DominoExample.swift; sourceTree = "<group>"; };
+		DEFD53AB28A7FB97007DD90E /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
+		DEFD53AE28A7FBE7007DD90E /* DiscoverUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +81,8 @@
 		DEFD538828A7F7C6007DD90E /* RecycleUI */ = {
 			isa = PBXGroup;
 			children = (
+				DEFD53A528A7FA3E007DD90E /* Mock Data */,
+				DEFD53A028A7F7E0007DD90E /* Domino */,
 				DEFD538928A7F7C6007DD90E /* RecycleUI.h */,
 				DEFD538A28A7F7C6007DD90E /* RecycleUI.docc */,
 			);
@@ -83,6 +95,56 @@
 				DEFD539528A7F7C7007DD90E /* RecycleUITests.swift */,
 			);
 			path = RecycleUITests;
+			sourceTree = "<group>";
+		};
+		DEFD53A028A7F7E0007DD90E /* Domino */ = {
+			isa = PBXGroup;
+			children = (
+				DEFD53A828A7FB02007DD90E /* Examples */,
+				DEFD53A728A7FAB5007DD90E /* View */,
+				DEFD53A628A7FAA7007DD90E /* View Model */,
+			);
+			path = Domino;
+			sourceTree = "<group>";
+		};
+		DEFD53A528A7FA3E007DD90E /* Mock Data */ = {
+			isa = PBXGroup;
+			children = (
+				DEFD53B128A7FBFA007DD90E /* Models */,
+				DEFD53AB28A7FB97007DD90E /* UserStore.swift */,
+			);
+			path = "Mock Data";
+			sourceTree = "<group>";
+		};
+		DEFD53A628A7FAA7007DD90E /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		DEFD53A728A7FAB5007DD90E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DEFD53A328A7FA1C007DD90E /* DominoStack.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DEFD53A828A7FB02007DD90E /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				DEFD53A928A7FB29007DD90E /* DominoExample.swift */,
+			);
+			path = Examples;
+			sourceTree = "<group>";
+		};
+		DEFD53B128A7FBFA007DD90E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DEFD53AE28A7FBE7007DD90E /* DiscoverUser.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +256,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEFD53AA28A7FB29007DD90E /* DominoExample.swift in Sources */,
+				DEFD53AF28A7FBE7007DD90E /* DiscoverUser.swift in Sources */,
+				DEFD53A428A7FA1C007DD90E /* DominoStack.swift in Sources */,
+				DEFD53AC28A7FB97007DD90E /* UserStore.swift in Sources */,
 				DEFD538B28A7F7C6007DD90E /* RecycleUI.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -202,6 +268,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEFD53B028A7FBE7007DD90E /* DiscoverUser.swift in Sources */,
+				DEFD53AD28A7FB97007DD90E /* UserStore.swift in Sources */,
 				DEFD539628A7F7C7007DD90E /* RecycleUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,7 +423,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ghafla.aibo-cora.RecycleUI";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -383,7 +451,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ghafla.aibo-cora.RecycleUI";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -396,6 +464,7 @@
 		DEFD539E28A7F7C7007DD90E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R6F5KHKKNX;
@@ -412,6 +481,7 @@
 		DEFD539F28A7F7C7007DD90E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R6F5KHKKNX;
