@@ -39,7 +39,7 @@
 		DEFD53A928A7FB29007DD90E /* DominoExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DominoExample.swift; sourceTree = "<group>"; };
 		DEFD53AB28A7FB97007DD90E /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
 		DEFD53AE28A7FBE7007DD90E /* DiscoverUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverUser.swift; sourceTree = "<group>"; };
-		DEFD53BE28A813ED007DD90E /* RecycleUI.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = RecycleUI.md; sourceTree = "<group>"; };
+		DEFD53BF28A8145C007DD90E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +64,7 @@
 		DEFD537C28A7F7C6007DD90E = {
 			isa = PBXGroup;
 			children = (
-				DEFD53BE28A813ED007DD90E /* RecycleUI.md */,
+				DEFD53BF28A8145C007DD90E /* README.md */,
 				DEFD538828A7F7C6007DD90E /* RecycleUI */,
 				DEFD539428A7F7C7007DD90E /* RecycleUITests */,
 				DEFD538728A7F7C6007DD90E /* Products */,
