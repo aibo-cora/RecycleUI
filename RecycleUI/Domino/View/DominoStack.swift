@@ -11,24 +11,35 @@ public protocol DominoProfile: Hashable {
     var profileInfo: String? { get set }
     var profilePhotoLocation: String? { get set }
 }
-
-/// A view composed of individual tiles stacked together in a `ZStack`.
-///
-/// Provide:
-/// `data` array, whose elements conform to the `DominoProfile` protocol.
-/// `tileCount` will be used to specify how many views will be displayed in a stack.
-/// `removeAction` closure will execute if the top tile is dragged to either side by more than `100` points and released.
-///
-/// Under the hood:
-/// Animation to bring up the next tile after the top one was removed.
-/// If the `profilePhotoLocation` has an invalid URL, the tile will display a continuous activity indicator. Provide a default URL with a backup image.
+/**
+ A view composed of individual tiles stacked together in a `ZStack`.
+ - Author:
+ Yura
+ - parameters:
+    - data: array, whose elements conform to the `DominoProfile` protocol.
+    - tileCount: will be used to specify how many views will be displayed in a stack.
+    - removeAction: closure will execute if the top tile is dragged to either side by more than `100` points and released.
+ - Important:
+ If the `profilePhotoLocation` has an invalid URL, the tile will display a continuous activity indicator. Provide a default URL with a backup image.
+ - Version:
+ 1.0
+ 
+ Animation to bring up the next tile after the top one was removed.
+ */
 public struct DominoStack<Profile>: View where Profile: DominoProfile {
     @State private var offset = CGSize.zero
     
     var data: [Profile]
-    var tileCount = 3
+    var tileCount: Int
     var removeAction: (() -> Void)? = nil
-    var defaultProfilePhotoLocation = ""
+    var defaultProfilePhotoLocation: String
+    
+    public init(data: [Profile], tileCount: Int = 3, defaultProfilePhotoLocation: String = "", action: (() -> Void)?) {
+        self.data = data
+        self.tileCount = tileCount
+        self.defaultProfilePhotoLocation = defaultProfilePhotoLocation
+        self.removeAction = action
+    }
     
     public var body: some View {
         VStack {
