@@ -20,8 +20,8 @@
 		DEFD53C328A81AB2007DD90E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFD53C228A81AB2007DD90E /* ImagePicker.swift */; };
 		DEFD53C528A81ABF007DD90E /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFD53C428A81ABF007DD90E /* ImagePickerView.swift */; };
 		DEFD53CB28A81FAA007DD90E /* CarouselSpotlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFD53CA28A81FAA007DD90E /* CarouselSpotlight.swift */; };
-		DEFD53CD28A830EF007DD90E /* CarouselTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFD53CC28A830EF007DD90E /* CarouselTile.swift */; };
 		DEFD53D028A96573007DD90E /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFD53CF28A96573007DD90E /* Carousel.swift */; };
+		DEFD53D328A96BE9007DD90E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFD53D228A96BE9007DD90E /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,8 +48,8 @@
 		DEFD53C228A81AB2007DD90E /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		DEFD53C428A81ABF007DD90E /* ImagePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 		DEFD53CA28A81FAA007DD90E /* CarouselSpotlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselSpotlight.swift; sourceTree = "<group>"; };
-		DEFD53CC28A830EF007DD90E /* CarouselTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselTile.swift; sourceTree = "<group>"; };
 		DEFD53CF28A96573007DD90E /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
+		DEFD53D228A96BE9007DD90E /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +93,7 @@
 		DEFD538828A7F7C6007DD90E /* RecycleUI */ = {
 			isa = PBXGroup;
 			children = (
+				DEFD53D128A96BDA007DD90E /* Extensions */,
 				DEFD53C128A81A95007DD90E /* Views */,
 				DEFD53A528A7FA3E007DD90E /* Mock Data */,
 				DEFD538928A7F7C6007DD90E /* RecycleUI.h */,
@@ -199,7 +200,6 @@
 			children = (
 				DEFD53CE28A832B5007DD90E /* Examples */,
 				DEFD53C928A81F4A007DD90E /* Spotlight */,
-				DEFD53CC28A830EF007DD90E /* CarouselTile.swift */,
 				DEFD53CF28A96573007DD90E /* Carousel.swift */,
 			);
 			path = Carousel;
@@ -218,6 +218,14 @@
 			children = (
 			);
 			path = Examples;
+			sourceTree = "<group>";
+		};
+		DEFD53D128A96BDA007DD90E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DEFD53D228A96BE9007DD90E /* Color.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,11 +340,11 @@
 				DEFD53AA28A7FB29007DD90E /* DominoExample.swift in Sources */,
 				DEFD53AF28A7FBE7007DD90E /* DiscoverUser.swift in Sources */,
 				DEFD53A428A7FA1C007DD90E /* DominoStack.swift in Sources */,
+				DEFD53D328A96BE9007DD90E /* Color.swift in Sources */,
 				DEFD53D028A96573007DD90E /* Carousel.swift in Sources */,
 				DEFD53C328A81AB2007DD90E /* ImagePicker.swift in Sources */,
 				DEFD53C528A81ABF007DD90E /* ImagePickerView.swift in Sources */,
 				DEFD53AC28A7FB97007DD90E /* UserStore.swift in Sources */,
-				DEFD53CD28A830EF007DD90E /* CarouselTile.swift in Sources */,
 				DEFD53CB28A81FAA007DD90E /* CarouselSpotlight.swift in Sources */,
 				DEFD538B28A7F7C6007DD90E /* RecycleUI.docc in Sources */,
 			);

@@ -7,15 +7,11 @@
 
 import Foundation
 
-struct DiscoverUser: DominoProfile {
+struct DiscoverUser: DominoProfile, Identifiable {
     var id: Int?
     var profileInfo: String?
     var profilePhotoLocation: String?
     var status: Int8?
-}
-
-public enum DiscoverStatus: Int8 {
-    case visible = 0, incognito
 }
 
 extension DiscoverUser: Codable { }
