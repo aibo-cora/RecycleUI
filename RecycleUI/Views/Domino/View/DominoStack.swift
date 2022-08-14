@@ -11,21 +11,7 @@ public protocol DominoProfile: Hashable {
     var profileInfo: String? { get set }
     var profilePhotoLocation: String? { get set }
 }
-/**
- A view composed of individual tiles stacked together in a `ZStack`.
- - Author:
- Yura
- - parameters:
-    - data: array, whose elements conform to the `DominoProfile` protocol.
-    - tileCount: will be used to specify how many views will be displayed in a stack.
-    - removeAction: closure will execute if the top tile is dragged to either side by more than `100` points and released.
- - Important:
- If the `profilePhotoLocation` has an invalid URL, the tile will display a continuous activity indicator. Provide a default URL with a backup image.
- - Version:
- 1.0
- 
- Animation to bring up the next tile after the top one was removed.
- */
+
 public struct DominoStack<Profile>: View where Profile: DominoProfile {
     @State private var offset = CGSize.zero
     
@@ -33,7 +19,21 @@ public struct DominoStack<Profile>: View where Profile: DominoProfile {
     var tileCount: Int
     var removeAction: (() -> Void)? = nil
     var defaultProfilePhotoLocation: String
-    
+    /**
+     A view composed of individual tiles stacked together in a `ZStack`.
+     - Author:
+     Yura
+     - parameters:
+        - data: array, whose elements conform to the `DominoProfile` protocol.
+        - tileCount: will be used to specify how many views will be displayed in a stack.
+        - removeAction: closure will execute if the top tile is dragged to either side by more than `100` points and released.
+     - Important:
+     If the `profilePhotoLocation` has an invalid URL, the tile will display a continuous activity indicator. Provide a default URL with a backup image.
+     - Version:
+     1.0
+     
+     Animation to bring up the next tile after the top one was removed.
+     */
     public init(data: [Profile], tileCount: Int = 3, defaultProfilePhotoLocation: String = "", action: (() -> Void)?) {
         self.data = data
         self.tileCount = tileCount
@@ -111,13 +111,13 @@ public struct DominoStack<Profile>: View where Profile: DominoProfile {
 struct DominoStack_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            DominoStack(data: UserStore().discoverUsers, tileCount: 3) {
+            DominoStack(data: UserStore().profiles, tileCount: 3) {
                 
             }
             .previewDevice(PreviewDevice(rawValue: "iPhone 13 Pro Max"))
             .previewDisplayName("iPhone 13 Pro Max")
             
-            DominoStack(data: UserStore().discoverUsers, tileCount: 3) {
+            DominoStack(data: UserStore().profiles, tileCount: 3) {
                 
             }
             .previewDevice(PreviewDevice(rawValue: "iPad Pro (11-inch) (3rd generation)"))

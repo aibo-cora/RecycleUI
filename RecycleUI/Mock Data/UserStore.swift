@@ -9,7 +9,7 @@ import Foundation
 
 struct UserStore {
     var images: [String]
-    var discoverUsers: [DiscoverUser]
+    var profiles: [DiscoverUser]
     var info: [String?]
     
     init() {
@@ -31,7 +31,7 @@ struct UserStore {
             "https://cdn.pixabay.com/photo/2022/07/22/13/23/coast-7338147_960_720.jpg",
             "https://cdn.pixabay.com/photo/2013/07/18/20/26/sea-164989_960_720.jpg"
         ]
-        discoverUsers = [
+        profiles = [
             DiscoverUser(id: 1, profileInfo: info[0], profilePhotoLocation: images[0]),
             DiscoverUser(id: 2, profileInfo: info[1], profilePhotoLocation: images[1]),
             DiscoverUser(id: 3, profileInfo: info[2], profilePhotoLocation: images[2]),
