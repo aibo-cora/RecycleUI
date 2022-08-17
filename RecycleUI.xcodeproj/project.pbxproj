@@ -10,6 +10,7 @@
 		DE36A53928AC6B3B007DCAB8 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE36A53828AC6B3B007DCAB8 /* ScrollView.swift */; };
 		DE36A53D28AC754F007DCAB8 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE36A53C28AC754F007DCAB8 /* Preferences.swift */; };
 		DE46AF3928AAB03B00AFDBED /* CarouselExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46AF3828AAB03B00AFDBED /* CarouselExample.swift */; };
+		DE75C6F928AD8FBE00439EB2 /* EntityProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75C6F828AD8FBE00439EB2 /* EntityProfile.swift */; };
 		DEFD538B28A7F7C6007DD90E /* RecycleUI.docc in Sources */ = {isa = PBXBuildFile; fileRef = DEFD538A28A7F7C6007DD90E /* RecycleUI.docc */; };
 		DEFD539128A7F7C7007DD90E /* RecycleUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEFD538628A7F7C6007DD90E /* RecycleUI.framework */; };
 		DEFD539628A7F7C7007DD90E /* RecycleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFD539528A7F7C7007DD90E /* RecycleUITests.swift */; };
@@ -41,6 +42,7 @@
 		DE36A53828AC6B3B007DCAB8 /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
 		DE36A53C28AC754F007DCAB8 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		DE46AF3828AAB03B00AFDBED /* CarouselExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselExample.swift; sourceTree = "<group>"; };
+		DE75C6F828AD8FBE00439EB2 /* EntityProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityProfile.swift; sourceTree = "<group>"; };
 		DEFD538628A7F7C6007DD90E /* RecycleUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RecycleUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEFD538928A7F7C6007DD90E /* RecycleUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecycleUI.h; sourceTree = "<group>"; };
 		DEFD538A28A7F7C6007DD90E /* RecycleUI.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = RecycleUI.docc; sourceTree = "<group>"; };
@@ -93,6 +95,14 @@
 			path = ScrollView;
 			sourceTree = "<group>";
 		};
+		DE75C6F728AD8FAF00439EB2 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				DE75C6F828AD8FBE00439EB2 /* EntityProfile.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		DEFD537C28A7F7C6007DD90E = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +125,7 @@
 		DEFD538828A7F7C6007DD90E /* RecycleUI */ = {
 			isa = PBXGroup;
 			children = (
+				DE75C6F728AD8FAF00439EB2 /* Protocols */,
 				DEFD53D128A96BDA007DD90E /* Extensions */,
 				DEFD53C128A81A95007DD90E /* Views */,
 				DEFD53A528A7FA3E007DD90E /* Mock Data */,
@@ -368,6 +379,7 @@
 			files = (
 				DEFD53AA28A7FB29007DD90E /* DominoExample.swift in Sources */,
 				DEFD53AF28A7FBE7007DD90E /* DiscoverUser.swift in Sources */,
+				DE75C6F928AD8FBE00439EB2 /* EntityProfile.swift in Sources */,
 				DE46AF3928AAB03B00AFDBED /* CarouselExample.swift in Sources */,
 				DEFD53A428A7FA1C007DD90E /* DominoStack.swift in Sources */,
 				DEFD53D328A96BE9007DD90E /* Color.swift in Sources */,

@@ -7,11 +7,6 @@
 
 import SwiftUI
 
-public protocol EntityProfile: Hashable {
-    var profileInfo: String? { get set }
-    var profilePhotoLocation: String? { get set }
-}
-
 public struct DominoStack<Profile>: View where Profile: EntityProfile {
     @State private var offset = CGSize.zero
     

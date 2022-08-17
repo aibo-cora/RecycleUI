@@ -20,44 +20,48 @@ struct Carousel<Profile>: View where Profile: EntityProfile {
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            ZStack {
-                LazyHStack(spacing: tileSpacing) {
-                    ForEach(Array(data.enumerated()), id: \.element) { index, profile in
-                        CarouselTile(centeredTileIndex: $centeredTileIndex, profile: profile, tileCornerRadius: tileCornerRadius, tileSize: tileSize)
-                            .scaleEffect(index == centeredTileIndex ? 1.0 : 1.0)
-                            .zIndex(Double(index == centeredTileIndex ? 100 : index))
-                            .overlay {
-                                RoundedRectangle(cornerRadius: tileCornerRadius, style: .circular)
-                                    .frame(width: tileSize.width, height: tileSize.height)
-                                    .foregroundColor(index == centeredTileIndex ? .clear : .black)
-                                    .opacity(index == centeredTileIndex ? 1 : 0.5)
-                            }
-                            
-                            // .offset(x: (UIScreen.main.bounds.width - tileSize.width) / 2, y: 0)
-                            .animation(SwiftUI.Animation.easeInOut(duration: 1.0).delay(1), value: centeredTileIndex)
-                    }
+            HStack(spacing: tileSpacing) {
+                ForEach(Array(data.enumerated()), id: \.element) { index, profile in
+                    CarouselTile(centeredTileIndex: $centeredTileIndex, profile: profile, tileCornerRadius: tileCornerRadius, tileSize: tileSize)
+                        .scaleEffect(index == centeredTileIndex ? 1.0 : 1.0)
+                        .zIndex(Double(index == centeredTileIndex ? 100 : index))
+                        .overlay {
+                            RoundedRectangle(cornerRadius: tileCornerRadius, style: .circular)
+                                .frame(width: tileSize.width, height: tileSize.height)
+                                .foregroundColor(index == centeredTileIndex ? .clear : .black)
+                                .opacity(index == centeredTileIndex ? 1 : 0.5)
+                        }
+
+                        // .offset(x: (UIScreen.main.bounds.width - tileSize.width) / 2, y: 0)
+                        .animation(SwiftUI.Animation.easeInOut(duration: 0.5).delay(0.25), value: centeredTileIndex)
                 }
-                .background(
-                    GeometryReader { geometry in
-                        Color.clear.preference(
-                            key: ScrollOffsetPreferenceKey.self,
-                            value: geometry.frame(in: .named(space)).origin
-                        )
+            }
+            .padding([.leading, .trailing], 20)
+            .background {
+                GeometryReader { geometry in
+                    Color.clear.preference(
+                        key: ScrollOffsetPreferenceKey.self,
+                        value: geometry.frame(in: .named(space)).origin.x
+                    )
+                }
+                // .frame(width: 0, height: 0, alignment: .center) <- Bad things happen
+                .onPreferenceChange(ScrollOffsetPreferenceKey.self) { svOffset in
+                    let totalTileWidth = tileSize.width + tileSpacing
+                    let totalContentWidth = CGFloat(data.count) * CGFloat(tileSize.width + tileSpacing)
+                    let hack = svOffset - 100
+                    
+                    print(svOffset, hack, totalContentWidth, totalTileWidth)
+                    
+                    if svOffset > -(totalContentWidth - totalTileWidth - 150) {
+                        centeredTileIndex = abs(Int(hack / totalTileWidth))
+                    } else {
+                        centeredTileIndex = data.count - 1
                     }
-                    .frame(width: 0, height: 0))
-                .padding([.leading, .trailing], 20)
+                    
+                }
             }
         }
-        .background(Color.init(hex: "F5F5DC"))
-        .onAppear {
-            centeredTileIndex = 0
-        }
         .coordinateSpace(name: space)
-        .onPreferenceChange(ScrollOffsetPreferenceKey.self) { svOffset in
-            let totalTileWidth = tileSize.width + tileSpacing
-            
-            centeredTileIndex = Int(svOffset.x / totalTileWidth)
-        }
     }
     
     struct CarouselTile: View {
@@ -70,7 +74,7 @@ struct Carousel<Profile>: View where Profile: EntityProfile {
         var tileSize: CGSize
         
         var body: some View {
-            ZStack {
+            ZStack() {
                 AsyncImage(url: URL(string: profile.profilePhotoLocation ?? defaultProfilePhotoLocation)) { image in
                     image
                         .resizable()
@@ -80,15 +84,15 @@ struct Carousel<Profile>: View where Profile: EntityProfile {
                 } placeholder: {
                     ProgressView()
                 }
-                .overlay(alignment: .bottom) {
-                    RoundedRectangle(cornerRadius: tileCornerRadius, style: .circular)
-                        .frame(width: tileSize.width, height: tileSize.height / 3.5)
-                        .foregroundColor(.white)
-                    Text(profile.profileInfo ?? "I am still considering what to put here.")
-                        .padding()
-                        .lineLimit(3)
-                        .minimumScaleFactor(0.5)
-                }
+//                .overlay(alignment: .bottom) {
+//                    RoundedRectangle(cornerRadius: tileCornerRadius, style: .circular)
+//                        .frame(width: tileSize.width, height: tileSize.height / 3.5)
+//                        .foregroundColor(.white)
+//                    Text(profile.profileInfo ?? "I am still considering what to put here.")
+//                        .padding()
+//                        .lineLimit(3)
+//                        .minimumScaleFactor(0.5)
+//                }
             }
         }
     }
