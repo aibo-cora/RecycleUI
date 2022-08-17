@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE36A53928AC6B3B007DCAB8 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE36A53828AC6B3B007DCAB8 /* ScrollView.swift */; };
+		DE36A53D28AC754F007DCAB8 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE36A53C28AC754F007DCAB8 /* Preferences.swift */; };
+		DE46AF3928AAB03B00AFDBED /* CarouselExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46AF3828AAB03B00AFDBED /* CarouselExample.swift */; };
 		DEFD538B28A7F7C6007DD90E /* RecycleUI.docc in Sources */ = {isa = PBXBuildFile; fileRef = DEFD538A28A7F7C6007DD90E /* RecycleUI.docc */; };
 		DEFD539128A7F7C7007DD90E /* RecycleUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEFD538628A7F7C6007DD90E /* RecycleUI.framework */; };
 		DEFD539628A7F7C7007DD90E /* RecycleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFD539528A7F7C7007DD90E /* RecycleUITests.swift */; };
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE36A53828AC6B3B007DCAB8 /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
+		DE36A53C28AC754F007DCAB8 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		DE46AF3828AAB03B00AFDBED /* CarouselExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselExample.swift; sourceTree = "<group>"; };
 		DEFD538628A7F7C6007DD90E /* RecycleUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RecycleUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEFD538928A7F7C6007DD90E /* RecycleUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecycleUI.h; sourceTree = "<group>"; };
 		DEFD538A28A7F7C6007DD90E /* RecycleUI.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = RecycleUI.docc; sourceTree = "<group>"; };
@@ -71,6 +77,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE36A53A28AC7525007DCAB8 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				DE36A53B28AC753D007DCAB8 /* ScrollView */,
+			);
+			path = Preferences;
+			sourceTree = "<group>";
+		};
+		DE36A53B28AC753D007DCAB8 /* ScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				DE36A53C28AC754F007DCAB8 /* Preferences.swift */,
+			);
+			path = ScrollView;
+			sourceTree = "<group>";
+		};
 		DEFD537C28A7F7C6007DD90E = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +194,7 @@
 		DEFD53C128A81A95007DD90E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				DE36A53A28AC7525007DCAB8 /* Preferences */,
 				DEFD53C828A81F41007DD90E /* Carousel */,
 				DEFD53C028A81A80007DD90E /* ImagePicker */,
 				DEFD53A028A7F7E0007DD90E /* Domino */,
@@ -201,6 +224,7 @@
 				DEFD53CE28A832B5007DD90E /* Examples */,
 				DEFD53C928A81F4A007DD90E /* Spotlight */,
 				DEFD53CF28A96573007DD90E /* Carousel.swift */,
+				DE36A53828AC6B3B007DCAB8 /* ScrollView.swift */,
 			);
 			path = Carousel;
 			sourceTree = "<group>";
@@ -216,6 +240,7 @@
 		DEFD53CE28A832B5007DD90E /* Examples */ = {
 			isa = PBXGroup;
 			children = (
+				DE46AF3828AAB03B00AFDBED /* CarouselExample.swift */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -256,6 +281,8 @@
 			dependencies = (
 			);
 			name = RecycleUI;
+			packageProductDependencies = (
+			);
 			productName = RecycleUI;
 			productReference = DEFD538628A7F7C6007DD90E /* RecycleUI.framework */;
 			productType = "com.apple.product-type.framework";
@@ -305,6 +332,8 @@
 				Base,
 			);
 			mainGroup = DEFD537C28A7F7C6007DD90E;
+			packageReferences = (
+			);
 			productRefGroup = DEFD538728A7F7C6007DD90E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -339,11 +368,14 @@
 			files = (
 				DEFD53AA28A7FB29007DD90E /* DominoExample.swift in Sources */,
 				DEFD53AF28A7FBE7007DD90E /* DiscoverUser.swift in Sources */,
+				DE46AF3928AAB03B00AFDBED /* CarouselExample.swift in Sources */,
 				DEFD53A428A7FA1C007DD90E /* DominoStack.swift in Sources */,
 				DEFD53D328A96BE9007DD90E /* Color.swift in Sources */,
+				DE36A53928AC6B3B007DCAB8 /* ScrollView.swift in Sources */,
 				DEFD53D028A96573007DD90E /* Carousel.swift in Sources */,
 				DEFD53C328A81AB2007DD90E /* ImagePicker.swift in Sources */,
 				DEFD53C528A81ABF007DD90E /* ImagePickerView.swift in Sources */,
+				DE36A53D28AC754F007DCAB8 /* Preferences.swift in Sources */,
 				DEFD53AC28A7FB97007DD90E /* UserStore.swift in Sources */,
 				DEFD53CB28A81FAA007DD90E /* CarouselSpotlight.swift in Sources */,
 				DEFD538B28A7F7C6007DD90E /* RecycleUI.docc in Sources */,
@@ -509,7 +541,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ghafla.aibo-cora.RecycleUI";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -537,7 +569,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ghafla.aibo-cora.RecycleUI";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;

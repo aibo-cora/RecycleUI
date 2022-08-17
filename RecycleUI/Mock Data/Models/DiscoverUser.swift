@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DiscoverUser: DominoProfile, Identifiable {
+struct DiscoverUser: EntityProfile, Identifiable {
     var id: Int?
     var profileInfo: String?
     var profilePhotoLocation: String?

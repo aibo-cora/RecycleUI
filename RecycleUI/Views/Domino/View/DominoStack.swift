@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-public protocol DominoProfile: Hashable {
+public protocol EntityProfile: Hashable {
     var profileInfo: String? { get set }
     var profilePhotoLocation: String? { get set }
 }
 
-public struct DominoStack<Profile>: View where Profile: DominoProfile {
+public struct DominoStack<Profile>: View where Profile: EntityProfile {
     @State private var offset = CGSize.zero
     
     var data: [Profile]
@@ -24,7 +24,7 @@ public struct DominoStack<Profile>: View where Profile: DominoProfile {
      - Author:
      Yura
      - parameters:
-        - data: array, whose elements conform to the `DominoProfile` protocol.
+        - data: array, whose elements conform to the `EntityProfile` protocol.
         - tileCount: will be used to specify how many views will be displayed in a stack.
         - removeAction: closure will execute if the top tile is dragged to either side by more than `100` points and released.
      - Important:
