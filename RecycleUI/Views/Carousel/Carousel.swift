@@ -77,16 +77,14 @@ struct Carousel<Profile, Footer>: View where Profile: EntityProfile, Footer: Vie
         let index: Int
         
         var body: some View {
-            VStack {
-                AsyncImage(url: URL(string: profile.profilePhotoLocation ?? defaultProfilePhotoLocation)) { image in
-                    image
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: tileSize.width, height: tileSize.height)
-                        .cornerRadius(tileCornerRadius)
-                } placeholder: {
-                    ProgressView()
-                }
+            AsyncImage(url: URL(string: profile.profilePhotoLocation ?? defaultProfilePhotoLocation)) { image in
+                image
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: tileSize.width, height: tileSize.height)
+                    .cornerRadius(tileCornerRadius)
+            } placeholder: {
+                ProgressView()
             }
         }
     }

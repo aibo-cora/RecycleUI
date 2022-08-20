@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct CarouselExample: View {
+    @State private var showDetailedView = false
+    @State private var currentTileIndex: Int?
+    
     var body: some View {
         Carousel(data: UserStore().profiles, footer: { index in
 //            Text(UserStore().profiles[index].profileInfo ?? "I am still considering what to put here.")
@@ -24,8 +27,8 @@ struct CarouselExample_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             CarouselExample()
-                .previewDevice(PreviewDevice(rawValue: "iPhone 13 Pro Max"))
-                .previewDisplayName("iPhone 13 Pro Max")
+                .previewDevice(PreviewDevice(rawValue: "iPhone 13 Pro"))
+                .previewDisplayName("iPhone 13 Pro")
             
             CarouselExample()
                 .previewDevice(PreviewDevice(rawValue: "iPad Pro (11-inch) (3rd generation)"))
