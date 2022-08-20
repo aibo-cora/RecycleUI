@@ -105,12 +105,12 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		DE9524A828B160650062A1F1 /* Tile */ = {
+		DE9524A828B160650062A1F1 /* Test */ = {
 			isa = PBXGroup;
 			children = (
 				DE9524A928B1608A0062A1F1 /* CarouselExpandedTile.swift */,
 			);
-			path = Tile;
+			path = Test;
 			sourceTree = "<group>";
 		};
 		DEFD537C28A7F7C6007DD90E = {
@@ -242,7 +242,7 @@
 		DEFD53C828A81F41007DD90E /* Carousel */ = {
 			isa = PBXGroup;
 			children = (
-				DE9524A828B160650062A1F1 /* Tile */,
+				DE9524A828B160650062A1F1 /* Test */,
 				DEFD53CE28A832B5007DD90E /* Examples */,
 				DEFD53C928A81F4A007DD90E /* Spotlight */,
 				DEFD53CF28A96573007DD90E /* Carousel.swift */,

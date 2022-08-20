@@ -21,13 +21,15 @@ struct Carousel<Profile, Footer>: View where Profile: EntityProfile, Footer: Vie
     var centerIndexChanged: ((_ index: Int) -> Void)?
     var footer: ((_ index: Int) -> Footer)?
     
+    @State private var detailed = false
+    
     @ViewBuilder
     var body: some View {
         VStack {
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: tileSpacing) {
                     ForEach(Array(data.enumerated()), id: \.element) { index, profile in
-                        CarouselTile(centeredTileIndex: $centeredTileIndex, profile: profile, tileCornerRadius: tileCornerRadius, tileSize: tileSize, index: index)
+                        CarouselTile(detailed: $detailed, profile: profile, tileCornerRadius: tileCornerRadius, tileSize: tileSize, spotlightOn: centeredTileIndex == index)
                             .overlay {
                                 RoundedRectangle(cornerRadius: tileCornerRadius, style: .circular)
                                     .frame(width: tileSize.width, height: tileSize.height)
@@ -68,24 +70,32 @@ struct Carousel<Profile, Footer>: View where Profile: EntityProfile, Footer: Vie
     }
     
     struct CarouselTile: View {
-        @Binding var centeredTileIndex: Int
+        @Binding var detailed: Bool/// Calculate offset to center a tile after detailed toggles to `true`
         
         let profile: Profile
-        var defaultProfilePhotoLocation = ""
+        
         let tileCornerRadius: CGFloat
         let tileSize: CGSize
-        let index: Int
+        
+        let defaultProfilePhotoLocation = ""
+        let spotlightOn: Bool
         
         var body: some View {
             AsyncImage(url: URL(string: profile.profilePhotoLocation ?? defaultProfilePhotoLocation)) { image in
                 image
                     .resizable()
                     .scaledToFill()
-                    .frame(width: tileSize.width, height: tileSize.height)
+                    .frame(width: (detailed && spotlightOn) ? UIScreen.main.bounds.width : tileSize.width, height: (detailed && spotlightOn) ? UIScreen.main.bounds.height : tileSize.height)
                     .cornerRadius(tileCornerRadius)
+                    .ignoresSafeArea()
+                    .onTapGesture {
+                        detailed.toggle()
+                    }
+                    
             } placeholder: {
                 ProgressView()
             }
+            .animation(Animation.easeOut(duration: 1.0), value: detailed)
         }
     }
 }
@@ -96,8 +106,8 @@ struct Carousel_Previews: PreviewProvider {
             Carousel(data: UserStore().profiles, footer:  { index in
                 Text("")
             })
-            .previewDevice(PreviewDevice(rawValue: "iPhone 13 Pro Max"))
-            .previewDisplayName("iPhone 13 Pro Max")
+            .previewDevice(PreviewDevice(rawValue: "iPhone 13 Pro"))
+            .previewDisplayName("iPhone 13 Pro")
             
             Carousel(data: UserStore().profiles, footer:  { index in
                 Text("")
