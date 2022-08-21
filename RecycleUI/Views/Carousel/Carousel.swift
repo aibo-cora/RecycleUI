@@ -17,6 +17,7 @@ struct Carousel<Profile, Footer>: View where Profile: EntityProfile, Footer: Vie
     
     let space = "scrollview"
     let tileSpacing: CGFloat = 10
+    let padding: CGFloat = 20
     
     var centerIndexChanged: ((_ index: Int) -> Void)?
     var footer: ((_ index: Int) -> Footer)?
@@ -25,48 +26,51 @@ struct Carousel<Profile, Footer>: View where Profile: EntityProfile, Footer: Vie
     
     @ViewBuilder
     var body: some View {
-        VStack {
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: tileSpacing) {
-                    ForEach(Array(data.enumerated()), id: \.element) { index, profile in
-                        CarouselTile(detailed: $detailed, profile: profile, tileCornerRadius: tileCornerRadius, tileSize: tileSize, spotlightOn: centeredTileIndex == index)
-                            .overlay {
-                                RoundedRectangle(cornerRadius: tileCornerRadius, style: .circular)
-                                    .frame(width: tileSize.width, height: tileSize.height)
-                                    .foregroundColor(index == centeredTileIndex ? .clear : .black)
-                                    .opacity(index == centeredTileIndex ? 1 : 0.5)
+        GeometryReader { geometry in
+            VStack {
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: tileSpacing) {
+                        ForEach(Array(data.enumerated()), id: \.element) { index, profile in
+                            CarouselTile(detailed: $detailed, profile: profile, tileCornerRadius: tileCornerRadius, tileSize: tileSize, spotlightOn: centeredTileIndex == index)
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: tileCornerRadius, style: .circular)
+                                        .frame(width: tileSize.width, height: tileSize.height)
+                                        .foregroundColor(index == centeredTileIndex ? .clear : .black)
+                                        .opacity(index == centeredTileIndex ? 1 : 0.5)
+                                }
+                        }
+                    }
+                    .padding([.leading, .trailing], padding)
+                    .background {
+                        GeometryReader { contentGeo in
+                            Color.clear.preference(
+                                key: ScrollOffsetPreferenceKey.self,
+                                value: contentGeo.frame(in: .named(space)).origin.x
+                            )
+                        }
+                        // .frame(width: 0, height: 0, alignment: .center) <- Bad things happen
+                        .onPreferenceChange(ScrollOffsetPreferenceKey.self) { svOffset in
+                            let totalTileWidth = tileSize.width + tileSpacing
+                            let totalContentWidth = CGFloat(data.count) * CGFloat(tileSize.width + tileSpacing)
+                            let hack = svOffset - 100
+                            
+                            print(svOffset, hack, totalContentWidth, totalTileWidth - tileSpacing)
+                            
+                            if svOffset > -(totalContentWidth - totalTileWidth - 150) {
+                                centeredTileIndex = abs(Int(hack / totalTileWidth))
+                            } else {
+                                centeredTileIndex = data.count - 1
                             }
-                    }
-                }
-                .padding([.leading, .trailing], 20)
-                .background {
-                    GeometryReader { geometry in
-                        Color.clear.preference(
-                            key: ScrollOffsetPreferenceKey.self,
-                            value: geometry.frame(in: .named(space)).origin.x
-                        )
-                    }
-                    // .frame(width: 0, height: 0, alignment: .center) <- Bad things happen
-                    .onPreferenceChange(ScrollOffsetPreferenceKey.self) { svOffset in
-                        let totalTileWidth = tileSize.width + tileSpacing
-                        let totalContentWidth = CGFloat(data.count) * CGFloat(tileSize.width + tileSpacing)
-                        let hack = svOffset - 100
-                        
-                        print(svOffset, hack, totalContentWidth, totalTileWidth)
-                        
-                        if svOffset > -(totalContentWidth - totalTileWidth - 150) {
-                            centeredTileIndex = abs(Int(hack / totalTileWidth))
-                        } else {
-                            centeredTileIndex = data.count - 1
                         }
                     }
                 }
+                .coordinateSpace(name: space)
+                
+                footer?(centeredTileIndex)
             }
-            .coordinateSpace(name: space)
-            
-            footer?(centeredTileIndex)
+            .animation(SwiftUI.Animation.linear(duration: 0.5).delay(0.25), value: centeredTileIndex)
+            .frame(width: geometry.size.width, height: geometry.size.height)
         }
-        .animation(SwiftUI.Animation.linear(duration: 0.5).delay(0.25), value: centeredTileIndex)
     }
     
     struct CarouselTile: View {
