@@ -8,17 +8,13 @@
 import SwiftUI
 
 struct CarouselExample: View {
-    @State private var showDetailedView = false
-    @State private var currentTileIndex: Int?
-    
     var body: some View {
         CarouselSpotlight(data: UserStore().profiles, footer: { index in
             Text(UserStore().profiles[index].profileInfo ?? "I am still considering what to put here.")
                 .lineLimit(3)
                 .minimumScaleFactor(0.5)
-                .padding([.top], 50)
                 .padding([.leading, .trailing], 20)
-            // EmptyView()
+                .frame(maxHeight: 150)
         })
     }
 }

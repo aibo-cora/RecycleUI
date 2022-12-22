@@ -10,6 +10,10 @@
 		DE36A53D28AC754F007DCAB8 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE36A53C28AC754F007DCAB8 /* Preferences.swift */; };
 		DE46AF3928AAB03B00AFDBED /* CarouselExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46AF3828AAB03B00AFDBED /* CarouselExample.swift */; };
 		DE75C6F928AD8FBE00439EB2 /* EntityProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75C6F828AD8FBE00439EB2 /* EntityProfile.swift */; };
+		DEC4B07C2954A21000289F49 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC4B07B2954A21000289F49 /* PageViewController.swift */; };
+		DEC4B07E2954A37E00289F49 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC4B07D2954A37E00289F49 /* PageView.swift */; };
+		DEC4B0802954A3D300289F49 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC4B07F2954A3D300289F49 /* Tile.swift */; };
+		DEC4B0842954A60300289F49 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC4B0832954A60300289F49 /* ImageView.swift */; };
 		DEFD538B28A7F7C6007DD90E /* RecycleUI.docc in Sources */ = {isa = PBXBuildFile; fileRef = DEFD538A28A7F7C6007DD90E /* RecycleUI.docc */; };
 		DEFD539128A7F7C7007DD90E /* RecycleUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEFD538628A7F7C6007DD90E /* RecycleUI.framework */; };
 		DEFD539628A7F7C7007DD90E /* RecycleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFD539528A7F7C7007DD90E /* RecycleUITests.swift */; };
@@ -40,6 +44,10 @@
 		DE36A53C28AC754F007DCAB8 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		DE46AF3828AAB03B00AFDBED /* CarouselExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselExample.swift; sourceTree = "<group>"; };
 		DE75C6F828AD8FBE00439EB2 /* EntityProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityProfile.swift; sourceTree = "<group>"; };
+		DEC4B07B2954A21000289F49 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		DEC4B07D2954A37E00289F49 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		DEC4B07F2954A3D300289F49 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
+		DEC4B0832954A60300289F49 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		DEFD538628A7F7C6007DD90E /* RecycleUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RecycleUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEFD538928A7F7C6007DD90E /* RecycleUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecycleUI.h; sourceTree = "<group>"; };
 		DEFD538A28A7F7C6007DD90E /* RecycleUI.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = RecycleUI.docc; sourceTree = "<group>"; };
@@ -99,11 +107,33 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		DE9524A828B160650062A1F1 /* Test */ = {
+		DEC4B07A2954A0ED00289F49 /* Page */ = {
 			isa = PBXGroup;
 			children = (
+				DEC4B07B2954A21000289F49 /* PageViewController.swift */,
+				DEC4B07D2954A37E00289F49 /* PageView.swift */,
 			);
-			path = Test;
+			path = Page;
+			sourceTree = "<group>";
+		};
+		DEC4B0812954A42B00289F49 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DEFD53C828A81F41007DD90E /* Carousel */,
+				DEFD53A028A7F7E0007DD90E /* Domino */,
+				DEFD53C028A81A80007DD90E /* ImagePicker */,
+				DEC4B0822954A5F100289F49 /* Shared */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DEC4B0822954A5F100289F49 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				DEC4B0832954A60300289F49 /* ImageView.swift */,
+				DEC4B07F2954A3D300289F49 /* Tile.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		DEFD537C28A7F7C6007DD90E = {
@@ -130,8 +160,8 @@
 			children = (
 				DE75C6F728AD8FAF00439EB2 /* Protocols */,
 				DEFD53D128A96BDA007DD90E /* Extensions */,
-				DEFD53C128A81A95007DD90E /* Views */,
-				DEFD53A528A7FA3E007DD90E /* Mock Data */,
+				DEFD53C128A81A95007DD90E /* UI */,
+				DEFD53A528A7FA3E007DD90E /* Data */,
 				DEFD538928A7F7C6007DD90E /* RecycleUI.h */,
 				DEFD538A28A7F7C6007DD90E /* RecycleUI.docc */,
 			);
@@ -156,13 +186,13 @@
 			path = Domino;
 			sourceTree = "<group>";
 		};
-		DEFD53A528A7FA3E007DD90E /* Mock Data */ = {
+		DEFD53A528A7FA3E007DD90E /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				DEFD53B128A7FBFA007DD90E /* Models */,
 				DEFD53AB28A7FB97007DD90E /* UserStore.swift */,
 			);
-			path = "Mock Data";
+			path = Data;
 			sourceTree = "<group>";
 		};
 		DEFD53A628A7FAA7007DD90E /* View Model */ = {
@@ -205,15 +235,13 @@
 			path = ImagePicker;
 			sourceTree = "<group>";
 		};
-		DEFD53C128A81A95007DD90E /* Views */ = {
+		DEFD53C128A81A95007DD90E /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				DE36A53A28AC7525007DCAB8 /* Preferences */,
-				DEFD53C828A81F41007DD90E /* Carousel */,
-				DEFD53C028A81A80007DD90E /* ImagePicker */,
-				DEFD53A028A7F7E0007DD90E /* Domino */,
+				DEC4B0812954A42B00289F49 /* Views */,
 			);
-			path = Views;
+			path = UI;
 			sourceTree = "<group>";
 		};
 		DEFD53C628A81AC6007DD90E /* Examples */ = {
@@ -235,8 +263,8 @@
 		DEFD53C828A81F41007DD90E /* Carousel */ = {
 			isa = PBXGroup;
 			children = (
-				DE9524A828B160650062A1F1 /* Test */,
 				DEFD53CE28A832B5007DD90E /* Examples */,
+				DEC4B07A2954A0ED00289F49 /* Page */,
 				DEFD53C928A81F4A007DD90E /* Spotlight */,
 			);
 			path = Carousel;
@@ -387,10 +415,14 @@
 				DEFD53D328A96BE9007DD90E /* Color.swift in Sources */,
 				DEFD53C328A81AB2007DD90E /* ImagePicker.swift in Sources */,
 				DEFD53C528A81ABF007DD90E /* ImagePickerView.swift in Sources */,
+				DEC4B0842954A60300289F49 /* ImageView.swift in Sources */,
 				DE36A53D28AC754F007DCAB8 /* Preferences.swift in Sources */,
 				DEFD53AC28A7FB97007DD90E /* UserStore.swift in Sources */,
+				DEC4B07C2954A21000289F49 /* PageViewController.swift in Sources */,
 				DEFD53CB28A81FAA007DD90E /* CarouselSpotlight.swift in Sources */,
+				DEC4B0802954A3D300289F49 /* Tile.swift in Sources */,
 				DEFD538B28A7F7C6007DD90E /* RecycleUI.docc in Sources */,
+				DEC4B07E2954A37E00289F49 /* PageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
