@@ -7,14 +7,17 @@
 
 import SwiftUI
 
-struct Tile: View {
+struct Tile<Profile>: View where Profile: EntityProfile {
+    let profile: Profile
+    let tileSize: CGSize
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ImageView(url: URL(string: profile.profilePhotoLocation ?? ""), frame: tileSize)
     }
 }
 
 struct Tile_Previews: PreviewProvider {
     static var previews: some View {
-        Tile()
+        Tile(profile: UserStore().profiles.first!, tileSize: UIScreen.main.bounds.size)
     }
 }

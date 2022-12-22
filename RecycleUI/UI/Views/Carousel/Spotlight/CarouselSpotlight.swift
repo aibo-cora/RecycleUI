@@ -31,7 +31,7 @@ struct CarouselSpotlight<Profile, Footer>: View where Profile: EntityProfile, Fo
                     ForEach(Array(data.enumerated()), id: \.element) { index, profile in
                         let spotlight = centeredTileIndex == index
                         
-                        CarouselSpotlightTile(profile: profile, tileSize: tileSize)
+                        Tile(profile: profile, tileSize: tileSize)
                             .overlay {
                                 RoundedRectangle(cornerRadius: tileCornerRadius, style: .circular)
                                     .foregroundColor(spotlight ? .clear : .black)
@@ -71,15 +71,6 @@ struct CarouselSpotlight<Profile, Footer>: View where Profile: EntityProfile, Fo
             centeredTileIndex = data.count - 1
         }
     }
-    
-    struct CarouselSpotlightTile: View {
-        let profile: Profile
-        let tileSize: CGSize
-        
-        var body: some View {
-            ImageView(url: URL(string: profile.profilePhotoLocation ?? ""), frame: tileSize)
-        }
-    }
 }
 
 struct CarouselSpotlight_Previews: PreviewProvider {
@@ -94,8 +85,8 @@ struct CarouselSpotlight_Previews: PreviewProvider {
             CarouselSpotlight(data: UserStore().profiles, footer:  { index in
                 Text("")
             })
-            .previewDevice(PreviewDevice(rawValue: "iPad Pro (11-inch) (3rd generation)"))
-            .previewDisplayName("iPad Pro (11-inch) (3rd generation)")
+            .previewDevice(PreviewDevice(rawValue: "iPad Pro (11-inch) (4th generation)"))
+            .previewDisplayName("iPad Pro (11-inch) (4th generation)")
         }
     }
 }
