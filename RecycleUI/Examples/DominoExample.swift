@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct DominoExample: View {
+    @State private var profiles = UserStore().profiles
+    
     var body: some View {
-        DominoStack(data: UserStore().profiles, tileCount: 3) {
+        DominoStack(data: profiles, tileCount: 3) {
             // remove action
-            // UserStore().discoverUsers.removeFirst()
+            profiles.removeFirst()
         }
     }
 }
