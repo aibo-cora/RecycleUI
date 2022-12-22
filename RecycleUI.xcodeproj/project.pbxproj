@@ -158,12 +158,13 @@
 		DEFD538828A7F7C6007DD90E /* RecycleUI */ = {
 			isa = PBXGroup;
 			children = (
-				DE75C6F728AD8FAF00439EB2 /* Protocols */,
-				DEFD53D128A96BDA007DD90E /* Extensions */,
-				DEFD53C128A81A95007DD90E /* UI */,
 				DEFD53A528A7FA3E007DD90E /* Data */,
-				DEFD538928A7F7C6007DD90E /* RecycleUI.h */,
+				DEFD53CE28A832B5007DD90E /* Examples */,
+				DEFD53D128A96BDA007DD90E /* Extensions */,
+				DE75C6F728AD8FAF00439EB2 /* Protocols */,
 				DEFD538A28A7F7C6007DD90E /* RecycleUI.docc */,
+				DEFD538928A7F7C6007DD90E /* RecycleUI.h */,
+				DEFD53C128A81A95007DD90E /* UI */,
 			);
 			path = RecycleUI;
 			sourceTree = "<group>";
@@ -179,9 +180,7 @@
 		DEFD53A028A7F7E0007DD90E /* Domino */ = {
 			isa = PBXGroup;
 			children = (
-				DEFD53A828A7FB02007DD90E /* Examples */,
-				DEFD53A728A7FAB5007DD90E /* View */,
-				DEFD53A628A7FAA7007DD90E /* View Model */,
+				DEFD53A328A7FA1C007DD90E /* DominoStack.swift */,
 			);
 			path = Domino;
 			sourceTree = "<group>";
@@ -193,29 +192,6 @@
 				DEFD53AB28A7FB97007DD90E /* UserStore.swift */,
 			);
 			path = Data;
-			sourceTree = "<group>";
-		};
-		DEFD53A628A7FAA7007DD90E /* View Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "View Model";
-			sourceTree = "<group>";
-		};
-		DEFD53A728A7FAB5007DD90E /* View */ = {
-			isa = PBXGroup;
-			children = (
-				DEFD53A328A7FA1C007DD90E /* DominoStack.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		DEFD53A828A7FB02007DD90E /* Examples */ = {
-			isa = PBXGroup;
-			children = (
-				DEFD53A928A7FB29007DD90E /* DominoExample.swift */,
-			);
-			path = Examples;
 			sourceTree = "<group>";
 		};
 		DEFD53B128A7FBFA007DD90E /* Models */ = {
@@ -230,7 +206,6 @@
 			isa = PBXGroup;
 			children = (
 				DEFD53C728A81AD6007DD90E /* View */,
-				DEFD53C628A81AC6007DD90E /* Examples */,
 			);
 			path = ImagePicker;
 			sourceTree = "<group>";
@@ -244,14 +219,6 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
-		DEFD53C628A81AC6007DD90E /* Examples */ = {
-			isa = PBXGroup;
-			children = (
-				DEFD53C428A81ABF007DD90E /* ImagePickerView.swift */,
-			);
-			path = Examples;
-			sourceTree = "<group>";
-		};
 		DEFD53C728A81AD6007DD90E /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,7 +230,6 @@
 		DEFD53C828A81F41007DD90E /* Carousel */ = {
 			isa = PBXGroup;
 			children = (
-				DEFD53CE28A832B5007DD90E /* Examples */,
 				DEC4B07A2954A0ED00289F49 /* Page */,
 				DEFD53C928A81F4A007DD90E /* Spotlight */,
 			);
@@ -282,6 +248,8 @@
 			isa = PBXGroup;
 			children = (
 				DE46AF3828AAB03B00AFDBED /* CarouselExample.swift */,
+				DEFD53A928A7FB29007DD90E /* DominoExample.swift */,
+				DEFD53C428A81ABF007DD90E /* ImagePickerView.swift */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
