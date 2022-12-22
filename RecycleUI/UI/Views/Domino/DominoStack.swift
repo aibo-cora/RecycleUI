@@ -41,29 +41,27 @@ public struct DominoStack<Profile>: View where Profile: EntityProfile {
     @State private var scale: CGFloat = 1.0
     
     public var body: some View {
-        VStack {
-            ScrollView(showsIndicators: false) {
-                ZStack {
-                    ForEach(Array(data.enumerated()), id: \.element) { index, profile in
-                        Tile(profile: profile, tileSize: frame)
-                            .cornerRadius(25)
-                            .zIndex(-Double(index))
-                            .rotationEffect(index == 0 ? .degrees(Double(offset.width / 10)) : .degrees(0))
-                            .opacity(index == 0 ? (2 - Double(abs(offset.width / 100))) : 1)
-                            .offset(x: index == 0 ? offset.width : 0, y: 0)
-                            .gesture(
-                                DragGesture()
-                                    .onChanged({ drag in
-                                        offset = drag.translation
-                                    })
-                                    .onEnded { _ in
-                                        if abs(offset.width) > 100 {
-                                            removeAction?()
-                                        }
-                                        offset = .zero
+        ScrollView(showsIndicators: false) {
+            ZStack {
+                ForEach(Array(data.enumerated()), id: \.element) { index, profile in
+                    Tile(profile: profile, tileSize: frame)
+                        .cornerRadius(25)
+                        .zIndex(-Double(index))
+                        .rotationEffect(index == 0 ? .degrees(Double(offset.width / 10)) : .degrees(0))
+                        .opacity(index == 0 ? (2 - Double(abs(offset.width / 100))) : 1)
+                        .offset(x: index == 0 ? offset.width : 0, y: 0)
+                        .gesture(
+                            DragGesture()
+                                .onChanged({ drag in
+                                    offset = drag.translation
+                                })
+                                .onEnded { _ in
+                                    if abs(offset.width) > 100 {
+                                        removeAction?()
                                     }
-                            )
-                    }
+                                    offset = .zero
+                                }
+                        )
                 }
             }
         }
