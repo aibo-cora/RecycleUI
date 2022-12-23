@@ -37,33 +37,46 @@ public struct DominoStack<Profile>: View where Profile: EntityProfile {
         self.removeAction = action
     }
     
-    let frame = CGSize(width: UIDevice.current.userInterfaceIdiom == .pad ? 400 : UIScreen.main.bounds.width <= 375 ? 325 : 375, height: 400)
-    @State private var scale: CGFloat = 1.0
-    
     public var body: some View {
-        ScrollView(showsIndicators: false) {
-            ZStack {
-                ForEach(Array(data.enumerated()), id: \.element) { index, profile in
-                    Tile(profile: profile, tileSize: frame)
-                        .cornerRadius(25)
-                        .zIndex(-Double(index))
-                        .rotationEffect(index == 0 ? .degrees(Double(offset.width / 10)) : .degrees(0))
-                        .opacity(index == 0 ? (2 - Double(abs(offset.width / 100))) : 1)
-                        .offset(x: index == 0 ? offset.width : 0, y: 0)
-                        .gesture(
-                            DragGesture()
-                                .onChanged({ drag in
-                                    offset = drag.translation
-                                })
-                                .onEnded { _ in
-                                    if abs(offset.width) > 100 {
-                                        removeAction?()
-                                    }
-                                    offset = .zero
+        ZStack(alignment: .center) {
+            ForEach(Array(data.enumerated()), id: \.element) { index, profile in
+                let flag = index == 0
+                
+                DominoTile(profile: profile, scale: 1 - 0.1 * CGFloat(index), flag: flag)
+                    .zIndex(-Double(index))
+                    .rotationEffect(flag ? .degrees(Double(offset.width / 10)) : .degrees(0))
+                    .opacity(flag ? (2 - Double(abs(offset.width / 100))) : 1)
+                    .offset(x: flag ? offset.width : 0, y: 0)
+                    .gesture(
+                        DragGesture()
+                            .onChanged({ drag in
+                                offset = drag.translation
+                            })
+                            .onEnded { _ in
+                                if abs(offset.width) > 100 {
+                                    removeAction?()
                                 }
-                        )
-                }
+                                offset = .zero
+                            }
+                    )
             }
+        }
+    }
+    
+    struct DominoTile: View {
+        let frame = CGSize(width: UIDevice.current.userInterfaceIdiom == .pad ? 400 : UIScreen.main.bounds.width <= 375 ? 325 : 375, height: 400)
+        let profile: Profile
+        let scale: CGFloat
+        let flag: Bool
+        
+        var body: some View {
+            VStack {
+                Tile(profile: profile, tileSize: frame)
+                    .scaleEffect(scale)
+                    .animation(.easeInOut(duration: 1.0), value: scale)
+                if flag { Text(profile.profileInfo ?? "") }
+            }
+            .padding()
         }
     }
 }

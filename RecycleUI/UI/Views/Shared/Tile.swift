@@ -13,6 +13,8 @@ struct Tile<Profile>: View where Profile: EntityProfile {
     
     var body: some View {
         ImageView(url: URL(string: profile.profilePhotoLocation ?? ""), frame: tileSize)
+            .cornerRadius(25)
+            .ignoresSafeArea()
     }
 }
 
