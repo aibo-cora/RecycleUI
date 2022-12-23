@@ -8,12 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		DE36A53D28AC754F007DCAB8 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE36A53C28AC754F007DCAB8 /* Preferences.swift */; };
-		DE46AF3928AAB03B00AFDBED /* CarouselExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46AF3828AAB03B00AFDBED /* CarouselExample.swift */; };
+		DE46AF3928AAB03B00AFDBED /* SpotlightExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE46AF3828AAB03B00AFDBED /* SpotlightExample.swift */; };
 		DE75C6F928AD8FBE00439EB2 /* EntityProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE75C6F828AD8FBE00439EB2 /* EntityProfile.swift */; };
 		DEC4B07C2954A21000289F49 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC4B07B2954A21000289F49 /* PageViewController.swift */; };
 		DEC4B07E2954A37E00289F49 /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC4B07D2954A37E00289F49 /* PageView.swift */; };
 		DEC4B0802954A3D300289F49 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC4B07F2954A3D300289F49 /* Tile.swift */; };
 		DEC4B0842954A60300289F49 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC4B0832954A60300289F49 /* ImageView.swift */; };
+		DEC4B08629562C6600289F49 /* PageExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC4B08529562C6600289F49 /* PageExample.swift */; };
+		DEC4B088295636ED00289F49 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC4B087295636ED00289F49 /* PageControl.swift */; };
+		DEC4B08A2956410F00289F49 /* ScaledText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC4B0892956410F00289F49 /* ScaledText.swift */; };
 		DEFD538B28A7F7C6007DD90E /* RecycleUI.docc in Sources */ = {isa = PBXBuildFile; fileRef = DEFD538A28A7F7C6007DD90E /* RecycleUI.docc */; };
 		DEFD539128A7F7C7007DD90E /* RecycleUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEFD538628A7F7C6007DD90E /* RecycleUI.framework */; };
 		DEFD539628A7F7C7007DD90E /* RecycleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFD539528A7F7C7007DD90E /* RecycleUITests.swift */; };
@@ -26,7 +29,7 @@
 		DEFD53B028A7FBE7007DD90E /* DiscoverUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFD53AE28A7FBE7007DD90E /* DiscoverUser.swift */; };
 		DEFD53C328A81AB2007DD90E /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFD53C228A81AB2007DD90E /* ImagePicker.swift */; };
 		DEFD53C528A81ABF007DD90E /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFD53C428A81ABF007DD90E /* ImagePickerView.swift */; };
-		DEFD53CB28A81FAA007DD90E /* CarouselSpotlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFD53CA28A81FAA007DD90E /* CarouselSpotlight.swift */; };
+		DEFD53CB28A81FAA007DD90E /* SpotlightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFD53CA28A81FAA007DD90E /* SpotlightView.swift */; };
 		DEFD53D328A96BE9007DD90E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFD53D228A96BE9007DD90E /* Color.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,12 +45,15 @@
 
 /* Begin PBXFileReference section */
 		DE36A53C28AC754F007DCAB8 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
-		DE46AF3828AAB03B00AFDBED /* CarouselExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselExample.swift; sourceTree = "<group>"; };
+		DE46AF3828AAB03B00AFDBED /* SpotlightExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightExample.swift; sourceTree = "<group>"; };
 		DE75C6F828AD8FBE00439EB2 /* EntityProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntityProfile.swift; sourceTree = "<group>"; };
 		DEC4B07B2954A21000289F49 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		DEC4B07D2954A37E00289F49 /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		DEC4B07F2954A3D300289F49 /* Tile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
 		DEC4B0832954A60300289F49 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
+		DEC4B08529562C6600289F49 /* PageExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageExample.swift; sourceTree = "<group>"; };
+		DEC4B087295636ED00289F49 /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
+		DEC4B0892956410F00289F49 /* ScaledText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScaledText.swift; sourceTree = "<group>"; };
 		DEFD538628A7F7C6007DD90E /* RecycleUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RecycleUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEFD538928A7F7C6007DD90E /* RecycleUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecycleUI.h; sourceTree = "<group>"; };
 		DEFD538A28A7F7C6007DD90E /* RecycleUI.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = RecycleUI.docc; sourceTree = "<group>"; };
@@ -60,7 +66,7 @@
 		DEFD53BF28A8145C007DD90E /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		DEFD53C228A81AB2007DD90E /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		DEFD53C428A81ABF007DD90E /* ImagePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
-		DEFD53CA28A81FAA007DD90E /* CarouselSpotlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselSpotlight.swift; sourceTree = "<group>"; };
+		DEFD53CA28A81FAA007DD90E /* SpotlightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotlightView.swift; sourceTree = "<group>"; };
 		DEFD53D228A96BE9007DD90E /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,8 +116,9 @@
 		DEC4B07A2954A0ED00289F49 /* Page */ = {
 			isa = PBXGroup;
 			children = (
-				DEC4B07B2954A21000289F49 /* PageViewController.swift */,
+				DEC4B087295636ED00289F49 /* PageControl.swift */,
 				DEC4B07D2954A37E00289F49 /* PageView.swift */,
+				DEC4B07B2954A21000289F49 /* PageViewController.swift */,
 			);
 			path = Page;
 			sourceTree = "<group>";
@@ -132,6 +139,7 @@
 			children = (
 				DEC4B0832954A60300289F49 /* ImageView.swift */,
 				DEC4B07F2954A3D300289F49 /* Tile.swift */,
+				DEC4B0892956410F00289F49 /* ScaledText.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -239,7 +247,7 @@
 		DEFD53C928A81F4A007DD90E /* Spotlight */ = {
 			isa = PBXGroup;
 			children = (
-				DEFD53CA28A81FAA007DD90E /* CarouselSpotlight.swift */,
+				DEFD53CA28A81FAA007DD90E /* SpotlightView.swift */,
 			);
 			path = Spotlight;
 			sourceTree = "<group>";
@@ -247,9 +255,10 @@
 		DEFD53CE28A832B5007DD90E /* Examples */ = {
 			isa = PBXGroup;
 			children = (
-				DE46AF3828AAB03B00AFDBED /* CarouselExample.swift */,
 				DEFD53A928A7FB29007DD90E /* DominoExample.swift */,
 				DEFD53C428A81ABF007DD90E /* ImagePickerView.swift */,
+				DEC4B08529562C6600289F49 /* PageExample.swift */,
+				DE46AF3828AAB03B00AFDBED /* SpotlightExample.swift */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
@@ -377,19 +386,22 @@
 			files = (
 				DEFD53AA28A7FB29007DD90E /* DominoExample.swift in Sources */,
 				DEFD53AF28A7FBE7007DD90E /* DiscoverUser.swift in Sources */,
+				DEC4B088295636ED00289F49 /* PageControl.swift in Sources */,
 				DE75C6F928AD8FBE00439EB2 /* EntityProfile.swift in Sources */,
-				DE46AF3928AAB03B00AFDBED /* CarouselExample.swift in Sources */,
+				DE46AF3928AAB03B00AFDBED /* SpotlightExample.swift in Sources */,
 				DEFD53A428A7FA1C007DD90E /* DominoStack.swift in Sources */,
 				DEFD53D328A96BE9007DD90E /* Color.swift in Sources */,
 				DEFD53C328A81AB2007DD90E /* ImagePicker.swift in Sources */,
 				DEFD53C528A81ABF007DD90E /* ImagePickerView.swift in Sources */,
 				DEC4B0842954A60300289F49 /* ImageView.swift in Sources */,
 				DE36A53D28AC754F007DCAB8 /* Preferences.swift in Sources */,
+				DEC4B08A2956410F00289F49 /* ScaledText.swift in Sources */,
 				DEFD53AC28A7FB97007DD90E /* UserStore.swift in Sources */,
 				DEC4B07C2954A21000289F49 /* PageViewController.swift in Sources */,
-				DEFD53CB28A81FAA007DD90E /* CarouselSpotlight.swift in Sources */,
+				DEFD53CB28A81FAA007DD90E /* SpotlightView.swift in Sources */,
 				DEC4B0802954A3D300289F49 /* Tile.swift in Sources */,
 				DEFD538B28A7F7C6007DD90E /* RecycleUI.docc in Sources */,
+				DEC4B08629562C6600289F49 /* PageExample.swift in Sources */,
 				DEC4B07E2954A37E00289F49 /* PageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
