@@ -5,10 +5,12 @@ Run the script in the project folder to create an `xcframework` for device and s
 
 `DominoStack` - inspired by https://dribbble.com/shots/18747268-Catalog-app-concept
 
+https://user-images.githubusercontent.com/37845296/209407082-8bb19a8c-cb27-42ae-ab2a-a15a56003583.mov
+
+
 - This view stacks tiles on top of each other with a left & right swipe animation exposing the next tile that comes worth animated.
 - v1.1
 
-https://user-images.githubusercontent.com/37845296/184504716-b691ceda-5c7e-4574-9f10-379bf87c1752.mov
 
 `ImagePicker`
 
