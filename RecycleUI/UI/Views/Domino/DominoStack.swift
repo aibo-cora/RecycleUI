@@ -42,7 +42,7 @@ public struct DominoStack<Profile>: View where Profile: EntityProfile {
             ForEach(Array(data.enumerated()), id: \.element) { index, profile in
                 let flag = index == 0
                 
-                DominoTile(profile: profile, scale: 1 - 0.1 * CGFloat(index), flag: flag)
+                DominoTile(profile: profile, scale: 1 - 0.1 * CGFloat(index), detailed: flag, staggered: true, index: index)
                     .zIndex(-Double(index))
                     .rotationEffect(flag ? .degrees(Double(offset.width / 10)) : .degrees(0))
                     .opacity(flag ? (2 - Double(abs(offset.width / 100))) : 1)
@@ -67,14 +67,18 @@ public struct DominoStack<Profile>: View where Profile: EntityProfile {
         let frame = CGSize(width: UIDevice.current.userInterfaceIdiom == .pad ? 400 : UIScreen.main.bounds.width <= 375 ? 325 : 375, height: 400)
         let profile: Profile
         let scale: CGFloat
-        let flag: Bool
+        let detailed: Bool
+        /// Configure the appearance of the stack. Use `true` to stagger views with an offset, `false` - default - on top of each other.
+        var staggered = false
+        let index: Int
         
         var body: some View {
             VStack {
                 Tile(profile: profile, tileSize: frame)
                     .scaleEffect(scale)
                     .animation(.easeInOut(duration: 1.0), value: scale)
-                if flag { Text(profile.profileInfo ?? "") }
+                    .offset(x: staggered ? CGFloat(25 * index) : 0, y: 0)
+                if detailed { Text(profile.profileInfo ?? "") }
             }
             .padding()
         }
