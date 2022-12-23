@@ -15,7 +15,6 @@ struct CarouselSpotlight<Profile, Footer>: View where Profile: EntityProfile, Fo
     var data: [Profile]
     
     var tileSize = CGSize(width: 350, height: 350)
-    var tileCornerRadius: CGFloat = 25
     
     let space = "scrollview"
     let tileSpacing: CGFloat = 10
@@ -33,11 +32,10 @@ struct CarouselSpotlight<Profile, Footer>: View where Profile: EntityProfile, Fo
                         
                         Tile(profile: profile, tileSize: tileSize)
                             .overlay {
-                                RoundedRectangle(cornerRadius: tileCornerRadius, style: .circular)
+                                RoundedRectangle(cornerRadius: 25, style: .circular)
                                     .foregroundColor(spotlight ? .clear : .black)
                                     .opacity(spotlight ? 1 : 0.5)
                             }
-                            .cornerRadius(tileCornerRadius)
                     }
                 }
                 .padding([.leading, .trailing], tileSpacing)
